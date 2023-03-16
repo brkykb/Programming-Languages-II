@@ -53,7 +53,7 @@ void fonk(int a[],int i){
    5.sorunun cevabı c
    6.sorunun cevabı girilen sayiyi bir azaltarak yazdirir
    7.sorunun cevabı 11001
-   8.sorunun cevabı e
+   8.sorunun cevabı d
    9.sorunun cevabı e
  
  
