@@ -1,1 +1,1 @@
-# Programming-Languages-II<iframe src="https://giphy.com/embed/wWeX3Ht3secoTQxX7C" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sad-smiley-sincory-wWeX3Ht3secoTQxX7C">via GIPHY</a></p>
+# Programming-Languages-II<img src="https://media.giphy.com/media/wWeX3Ht3secoTQxX7C/giphy.gif" align="rigt" width="40" height="40">
