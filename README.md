@@ -1,1 +1,1 @@
-# Programming-Languages-II<img src="https://media.giphy.com/media/wWeX3Ht3secoTQxX7C/giphy.gif" align="rigt" width="40" height="40">
+# Programming-Languages-II<img src="https://media.giphy.com/media/i1iA5wwEuRQNq/giphy.gif" align="rigt" width="100" height="100">
