@@ -205,48 +205,49 @@ void enbasarili(void){
 }
 
 void kayitsilme(void){
- 
+    
     int a,c=0,d=0;
-    
-    ptr=fopen("ogrencilistesi.txt","r+");
-    liste list;
-    
     FILE *pt;
+    liste list;
     pt=fopen("yedek.txt","w");
-    
-    printf("Silmek istediginiz ogrencinin numarasini giriniz: \n");
-    scanf("%d",&a);
-    
-    while(!feof(ptr)){
-        fscanf(ptr,"%d %s %f %f %f\n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
-        if(list.number==a){
-            
-            rewind(ptr);
-            break;
-        }
-        else{
-            fscanf(ptr,"%d %s %f %f %f\n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
-            c++;
-        }
-    }
-    while(d<c){
-        fscanf(ptr,"%d %s %f %f %f\n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
-        fprintf(pt,"%d %s %f %f %f\n",list.number,list.ad,list.mid,list.final,list.ort);
-        d++;
-    }
-    fscanf(ptr,"%d %s %f %f %f\n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
-    
-    while(!feof(ptr)){
-        fscanf(ptr,"%d %s %f %f %f\n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
-        fprintf(pt,"%d %s %f %f %f\n",list.number,list.ad,list.mid,list.final,list.ort);
+    if(pt==NULL)
+        printf("Dosya acilamadi\n");
+    else{
+        ptr=fopen("ogrencilistesi.txt","r+");
+        printf("Silmek istediginiz ogrenci numarasini giriniz\n");
+        scanf("%d",&a);
         
+        while(!feof(ptr)){
+            fscanf(ptr,"%d %s %f %f %f \n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
+            if(a==list.number)
+                break;
+            else{
+                c++;
+            }
+        }
+        rewind(ptr);
+        
+        while(d<c){
+            fscanf(ptr,"%d %s %f %f %f \n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
+            fprintf(pt,"%d %s %f %f %f \n",list.number,list.ad,list.mid,list.final,list.ort);
+            d++;
+        }
+        if(d==c){
+            fscanf(ptr,"%d %s %f %f %f \n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
+            d++;
+        }
+        if(d>c){
+            while(!feof(ptr)){
+                fscanf(ptr,"%d %s %f %f %f \n",&list.number,list.ad,&list.mid,&list.final,&list.ort);
+                fprintf(pt,"%d %s %f %f %f \n",list.number,list.ad,list.mid,list.final,list.ort);
+            }
+        }
     }
     remove("ogrencilistesi.txt");
     rename("yedek.txt","ogrencilistesi.txt");
-    
     rewind(pt);
-    ptr=pt;
     
-    fclose(ptr);
+    ptr=pt;
     fclose(pt);
+    fclose(ptr);
 }
