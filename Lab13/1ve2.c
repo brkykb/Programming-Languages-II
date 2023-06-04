@@ -52,8 +52,6 @@ void kayitekleme(FILE *ptr){
     printf("Kac ogrenci bilgisi gireceginizi yaziniz: ");
     scanf("%d",&a);
     
-    fseek(ptr,0,SEEK_END);
-    
             for(i=0;i<a;i++){
                 printf("%d.Yeni ogrenci numarasini girin: ",(i+1));
                 scanf("%d",&list.num);
@@ -76,8 +74,6 @@ void kayitlisteleme(FILE *ptr){
     fseek(ptr,0,SEEK_SET);
     printf("%-10s%-16s%10s\n","Numara","İsim","Bolum");
     while(fread(&list, sizeof(liste), 1, ptr) == 1){
-        fread(&list,sizeof(liste),1,ptr);
-        
         printf("%d %s %s\n",list.num,list.isim,list.bolum);
     }
     printf("\n");
@@ -151,7 +147,6 @@ void dosyalama(FILE *ptr){
     fseek(ptr,0,SEEK_SET);
     fprintf(pt,"Numara Ad Bolum\n\n");
     while(fread(&list, sizeof(liste), 1, ptr) == 1){
-        fread(&list,sizeof(liste),1,ptr);
         fprintf(pt,"%d %s %s\n",list.num,list.isim,list.bolum);
     }
     fclose(ptr);
